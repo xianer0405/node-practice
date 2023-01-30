@@ -10,11 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async-validator": "^4.2.5",
+    "bcryptjs": "^2.4.3",
     "koa": "^2.14.1",
     "koa-body": "^6.0.1",
+    "koa-generic-session": "^2.3.0",
+    "koa-redis": "^4.0.1",
     "koa-router": "^12.0.0",
     "koa-static": "^5.0.0",
     "koa-views": "^8.0.0",
-    "require-directory": "^2.1.1"
+    "mysql2": "^3.0.1",
+    "redis": "^4.5.1",
+    "require-directory": "^2.1.1",
+    "sequelize": "^7.0.0-alpha2.2"
   }
 }

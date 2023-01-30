@@ -4,5 +4,5 @@
 ## 应用MongoDB
 ## 应用Redis
 ## 异常处理
-## PM2
+## PM2, Node集群
 

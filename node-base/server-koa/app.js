@@ -1,8 +1,11 @@
 const Koa = require('koa')
-const bodyParser = require('koa-body')
+const { koaBody } = require('koa-body')
 const koaStatic = require('koa-static')
 const koaViews = require('koa-views')
 const path = require('path')
+const errorHandler = require('./server/middleware/exception')
+
+const AppLoader = require('./server/core/init')
 
 const resolve = path.resolve;
 
@@ -12,7 +15,11 @@ app.use(koaViews(resolve(__dirname, './server/views'), {
     extension: 'ejs'
 }))
 
-app.use(bodyParser())
+app.use(errorHandler)
+app.use(koaBody())
+
+
+AppLoader.bootstrap(app);
 
 app.listen(3000, () => {
     console.log('Koa is listening in http://localhost:3000')

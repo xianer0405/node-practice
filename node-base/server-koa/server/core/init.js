@@ -11,6 +11,18 @@ class AppLoader {
 
     static loadRoutes() {
         console.log('loadRoutes');
+        const apiDirectory = `${process.cwd()}/server/app/api`
+
+        // 路由自动加载
+        requireDirectory(module, apiDirectory, {
+            visit: whenLoadModule
+        })
+
+        function whenLoadModule(routerModule) {
+            if (routerModule instanceof KoaRouter) {
+                AppLoader.app.use(routerModule.routes());
+            }
+        }
     }
 
     static loadConfig() {
@@ -21,3 +33,5 @@ class AppLoader {
         console.log('loadHttpException');
     }
 }
+
+module.exports = AppLoader
