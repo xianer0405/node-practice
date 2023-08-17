@@ -5,7 +5,7 @@ const descriptor = {
         { type: 'string', min: 2, max: 6, message: '昵称长度必须在2~16之间' }
     ],
     email: [
-        { type: 'string', required: true, pattern: Schema.pattern.email, message: '电子邮箱不符合规范，请输入正确的邮箱' }
+        { type: 'string', required: true, message: '电子邮箱不符合规范，请输入正确的邮箱' }
     ],
     password: [
         { type: 'string', min: 6, max: 18, message: '密码至少6个字符, 最多22个字符' },
